@@ -1,0 +1,517 @@
+/* ============ Google Fonts ============ */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+/* ============ Umumiy sozlamalar ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comfortaa', 'Segoe UI', sans-serif;
+    background-color: #000;
+    color: white;
+    line-height: 1.6;
+}
+
+/* ============ Container ============ */
+.container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ============ Yuqori banner ============ */
+.top-banner {
+    background: linear-gradient(90deg, #0031AF 0%, #BF7204 97.52%, #C27500 100%);
+    padding: 12px 0;
+}
+
+.top-banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    font-size: 16px;
+}
+
+.top-banner-content i {
+    font-size: 20px;
+}
+
+/* ============ Asosiy navbar ============ */
+.main-navbar {
+    background-color: #000;
+    border-bottom: 1px solid #333;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-main {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff9900;
+}
+
+.logo-sub {
+    font-size: 16px;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+    padding-bottom: 2px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ff9900;
+    border-bottom: 2px solid #ff9900;
+}
+
+/* ============ Hero Section ============ */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('./img/header_background.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    color: white;
+}
+
+.rasm {
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: absolute;
+    z-index: 2;
+    max-width: 600px;
+    left: 161px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.watch-btn {
+    background: #ff9900;
+    color: #000;
+    border: none;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.watch-btn:hover {
+    background: #e08a00;
+}
+
+/* ============ Films Section ============ */
+.films-section {
+    padding: 60px 0;
+    background: #040D1F;
+}
+
+.section-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: left;
+    padding-left: 15px;
+}
+
+/* ============ Horizontal Scroll — 4 ta karta bir qatorda ============ */
+.films-grid {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding: 10px 0 20px 15px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    margin-left: -15px;
+}
+
+.films-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.films-grid {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* ============ Film Card ============ */
+.film-card {
+    flex: 0 0 auto;
+    width: 255px;
+    height: 367px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.film-card:hover {
+    transform: translateY(-8px);
+}
+
+.film-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.film-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.film-card:hover .film-image img {
+    transform: scale(1.05);
+}
+
+/* Play tugmasi — markazda */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 10;
+}
+
+.play-button::before {
+    content: "▶";
+    color: white;
+    font-size: 20px;
+    margin-left: 2px;
+}
+
+.play-button:hover {
+    background: rgba(255, 153, 0, 0.9);
+}
+
+/* Davomiyligi — PLAY TUGMASINING PASTIDA, OVAL SHAKLDA, OQ CHEGARA BILAN */
+.duration {
+    position: absolute;
+    top: calc(50% + 30px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    padding: 6px 16px;
+    border: 2px solid white;
+    border-radius: 20px;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    z-index: 10;
+    text-align: center;
+    min-width: 80px;
+}
+
+/* Film nomi va tavsifi — rasm ustida, pastki qismda */
+.film-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    color: white;
+    z-index: 5;
+}
+
+.film-title {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    color: white;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.film-description {
+    font-size: 0.95rem;
+    color: #a9b7c6;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .film-card {
+        width: 220px;
+    }
+
+    .section-heading {
+        font-size: 1.75rem;
+    }
+
+    .play-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .play-button::before {
+        font-size: 16px;
+    }
+
+    .duration {
+        font-size: 12px;
+        padding: 4px 12px;
+    }
+}
+
+/* ============ Collections Section ============ */
+/* Black Widow Hero Section */
+.black-widow-hero {
+    max-width: 1200px;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    background: url('https://via.placeholder.com/1200x600?text=Mountain+and+Sea') no-repeat center center;
+    background-size: cover;
+    border: 3px solid #007BFF;
+    position: relative;
+}
+
+.black-widow-content {
+    max-width: 500px;
+    z-index: 2;
+}
+
+.marvel-logo {
+    font-size: 14px;
+    color: #cc0000;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.movie-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.movie-title span {
+    color: #cc0000;
+}
+
+.movie-description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #222;
+    line-height: 1.6;
+}
+
+.watch-btn {
+    background: #ff7700;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.watch-btn:hover {
+    background: #e66600;
+}
+
+/* Responsive — mobil uchun */
+@media (max-width: 768px) {
+    .black-widow-hero {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 25px;
+    }
+
+    .movie-title {
+        font-size: 2.5rem;
+    }
+
+    .movie-description {
+        font-size: 0.95rem;
+    }
+
+    .watch-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+.rasm {
+    width: 100%;
+    height: 100%;
+}
+
+/* Collections Section */
+.collections-section {
+    padding: 60px 0;
+    background-color: #0d0d1a;
+}
+
+.section-heading {
+    color: #ff9900;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 60px;
+    height: 3px;
+    background: #ff9900;
+}
+.collections-section {
+  padding: 20px;
+  background-color: #0a0a14; /* Tumanli qora fon */
+}
+
+.section-title {
+  color: #ff9900; /* Narang rang */
+  font-size: 24px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ff9900; /* Pastki chiziq */
+  display: inline-block;
+}
+
+.movie-cards {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.movie-card {
+  position: relative;
+  width: 300px;
+  height: 180px;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.movie-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .play-button {
+  opacity: 1;
+}
+
+.movie-title {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  border-radius: 4px;
+}
